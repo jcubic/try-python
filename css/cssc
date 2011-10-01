@@ -1,0 +1,12 @@
+#!/usr/bin/python
+# 
+# CSS Compression one liner
+# Licensed under GNU LGPL Version 3 license
+# Copyright (c) 2011 Jakub Jankiewicz <http://jcubic.pl>
+#
+
+from sys import stdin
+import re
+
+if __name__ == '__main__':
+    print re.sub('\s*([{};,:])\s*', '\\1', re.sub('/\*.*?\*/', '', re.sub('\s+', ' ', stdin.read())))
