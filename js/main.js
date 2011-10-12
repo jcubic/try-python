@@ -195,7 +195,7 @@ $(function() {
             py = python(terminal);
         },
         width: 600,
-        height: 250
+        height: 255
     });
     
     
