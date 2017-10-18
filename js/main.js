@@ -1,4 +1,4 @@
-/* 
+/*
  * JQuery CSS Rotate property using CSS3 Transformations
  * Copyright (c) 2011 Jakub Jankiewicz  <http://jcubic.pl>
  * licensed under the LGPL Version 3 license.
@@ -70,14 +70,25 @@ $.fn.avatar = function(avatar) {
    });
    return this;
 };
+
+// we need to wrap jQuery because None type returned by python
+// function throw exception because it's not converted to null
+function terminal(interpreter, options) {
+    return $('#terminal').terminal(function() {
+        interpreter.apply(this, arguments);
+    }, options);
+}
+
+formatter('python');
 //--------------------------------------------------
 // MAIN CODE
 //--------------------------------------------------
 $(function() {
+    brython();
     //JSON-RPC ID
     var id = 1;
-    if ($.browser.ie) { 
-        $('header img').attr('src', 'css/python.gif'); 
+    if ($.browser.ie) {
+        $('header img').attr('src', 'css/python.gif');
     }
     function python(terminal) {
         var pydicator = (function(element) {
@@ -99,11 +110,11 @@ $(function() {
                 }
             };
         })($('header img'));
-        
+
         function ajax_error(xhr, status) {
             pydicator.stop();
             terminal.resume();
-            terminal.error('&#91;AJAX&#93; ' + status + ' server response\n' + 
+            terminal.error('&#91;AJAX&#93; ' + status + ' server response\n' +
                            xhr.responseText);
             terminal.pop();
         }
@@ -161,49 +172,34 @@ $(function() {
             }
         };
     }
-    
+
     var py; // python rpc
     var python_code = '';
+    /*
     $('#terminal').terminal(function(command, term) {
-        if (command.match(/help/)) {
-            if (command.match(/^help */)) {
-                term.echo("Type help() for interactive help, or " +
-                          "help(object) for help about object.");
-            } else {
-                var rgx = /help\((.*)\)/
-                    py.evaluate(command.replace(rgx, 'print $1.__doc__'));
-            }
-        } else if (command.match(/: *$/)) {
-            python_code += command + "\n";
-            term.set_prompt('...');
-        } else if (python_code) {
-            if (command == '') {
-                term.set_prompt('>>>');
-                py.evaluate(python_code);
-                python_code = '';
-            } else {
-                python_code += command + "\n";
-                }
-        } else {
-            py.evaluate(command);
-        }
+        term.error("Python disabled");
     }, {
-        prompt: '>>>',
+        prompt: '>>> ',
         name: 'python',
         greetings: null,
+        onBlur: function() { return false; },
         onInit: function(terminal) {
-            py = python(terminal);
+            terminal.echo("Python interpreter needed to be shutdown because of security issues. " +
+                          "But the code still work and you can grab the source from github");
+            terminal.echo("https://github.com/jcubic/try-python");
+            terminal.echo("You can also check Leash Shell http://leash.jcubic.pl that have " +
+                          "python command, that run same code.");
         },
         width: 600,
         height: 255
-    });
-    
-    
+    });*/
+
+
     $(window).unload(function() {
-        py.destroy();
+        //py.destroy();
     });
     $('footer a').avatar('avatar.png');
-    
+
     //stumble block page loading
     $('<iframe/>').attr({
         src: "http://www.stumbleupon.com/badge/embed/5/?url=" + escape(window.location),
@@ -212,8 +208,8 @@ $(function() {
         allowTransparency: true,
         frameborder:0}).css({
             border: 'none',
-            overflow: 'hidden', 
+            overflow: 'hidden',
             width: 50,
             height: 60}).appendTo($('aside #share'));
-    
+
 });

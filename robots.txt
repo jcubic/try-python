@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: /sitemap.xml
-Sitemap: http://trypython.jcubic.pl/sitemap.xml
+Disallow: /
