@@ -56,7 +56,25 @@ header("X-Powered-By: ");
     </div>
   </aside>
   <? endif; ?>
-  
   <a href="https://github.com/jcubic/try-python" style="position: absolute; top: 0; left: 0; z-index:1000"><img style="border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork Try Python on GitHub"></a>
+  <? if ($_SERVER["HTTP_HOST"] != "localhost" && !isset($_GET['track'])): ?>
+    <!-- Piwik -->
+    <script type="text/javascript">
+     if (location.host == 'trypyhton.jcubic.pl') {
+         var _paq = _paq || [];
+         _paq.push(['trackPageView']);
+         _paq.push(['enableLinkTracking']);
+         (function() {
+             var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.jcubic.pl/";
+             _paq.push(['setTrackerUrl', u+'piwik.php']);
+             _paq.push(['setSiteId', 1]);
+             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+             g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+         })();
+     }
+    </script>
+    <noscript><p><img src="http://piwik.jcubic.pl/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+    <? endif; ?>
 </body>
 </html>
