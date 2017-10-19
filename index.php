@@ -35,7 +35,7 @@ header("X-Powered-By: ");
     <header><img src="css/python.png"/><h1>Try Python</h1></header>
     <div id="terminal"></div>
     <p>This is interactive AJAX driven online interpreter for <a href="http://www.python.org">Python</a> Programming language. It use <a href="http://terminal.jcubic.pl">JQuery terminal Emulator Plugin</a>. Python is dynamic, high level, object oriented programming language that you can now try directly from your browser.</p>
-    <footer>Copyright &copy; <?php echo date('Y'); ?> <a href="http://jcubic.pl">Jakub Jankiewicz</a></footer>
+    <footer>Copyright &copy; <?php echo date('Y'); ?> <a href="http://jcubic.pl/jakub-jankiewicz">Jakub Jankiewicz</a></footer>
   </section>
   <!--
   <div id="wrapper">
