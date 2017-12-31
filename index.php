@@ -5,10 +5,26 @@ header("X-Powered-By: ");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Try Python - Interactive AJAX Python Interpreter</title>
-    <meta name="Description" content="Try python directly in you browser with this ajax driven interactive interpreter appliction."/>
+    <title>Try Python - Interactive Python Interpreter</title>
+    <meta name="Description" content="Try python directly in you browser with this interactive interpreter appliction."/>
     <meta name="Keywords" content="python ajax web2.0 interpreter browser terminal JSON-RPC"/>
     <link rel="shortcut icon" href="favicon.ico"/>
+
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="JQuery Terminal Emulator Plugin"/>
+    <meta property="og:description" content="Try python directly in you browser with interactive interpreter appliction."/>
+    <meta property="og:url" content="http://trypython.jubic.pl/"/>
+    <meta property="og:site_name" content="Interactive Python Interpreter"/>
+    <meta property="og:image" content="http://trypython.jcubic.pl/css/python.png"/>
+
+    <meta name="twitter:image" content="http://trypython.jcubic.pl/css/python.png"/>
+    <meta name="twitter:image:alt" content="Python logo"/>
+    <meta name="twitter:title" content="Interactive Python Interpreter"/>
+    <meta name="twitter:description" content="Try python directly in you browser with interactive interpreter appliction."/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@jcubic"/>
+    <meta name="twitter:creator" content="@jcubic"/>
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -34,7 +50,7 @@ header("X-Powered-By: ");
   <section>
     <header><img src="css/python.png"/><h1>Try Python</h1></header>
     <div id="terminal"></div>
-    <p>This is interactive AJAX driven online interpreter for <a href="http://www.python.org">Python</a> Programming language. It use <a href="http://terminal.jcubic.pl">JQuery terminal Emulator Plugin</a>. Python is dynamic, high level, object oriented programming language that you can now try directly from your browser.</p>
+    <p>This is interactive online interpreter for <a href="http://www.python.org">Python</a> Programming language. It use <a href="http://terminal.jcubic.pl">JQuery terminal Emulator Plugin</a>, <a href="https://brython.info/">Brython</a> and <a href="http://prismjs.com/">Prims.js</a>. Python is dynamic, high level, object oriented programming language that you can now try directly from your browser.</p>
     <footer>Copyright &copy; <?php echo date('Y'); ?> <a href="http://jcubic.pl/jakub-jankiewicz">Jakub Jankiewicz</a></footer>
   </section>
   <!--
@@ -43,7 +59,7 @@ header("X-Powered-By: ");
   </div>
   -->
   <? if ($_SERVER["HTTP_HOST"] != "localhost"): ?>
-  <aside> 
+  <aside>
     <a id="html5" href="http://www.w3.org/html/logo/">
       <img src="http://www.w3.org/html/logo/badge/html5-badge-v-css3-graphics-semantics.png" width="38" height="170" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics">
 </a>
