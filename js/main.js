@@ -1,6 +1,6 @@
 /*
  * JQuery CSS Rotate property using CSS3 Transformations
- * Copyright (c) 2011 Jakub Jankiewicz  <http://jcubic.pl>
+ * Copyright (c) 2011 Jakub Jankiewicz  <https://jcubic.pl/me>
  * licensed under the LGPL Version 3 license.
  * http://www.gnu.org/licenses/lgpl.html
  */
@@ -187,7 +187,7 @@ $(function() {
             terminal.echo("Python interpreter needed to be shutdown because of security issues. " +
                           "But the code still work and you can grab the source from github");
             terminal.echo("https://github.com/jcubic/try-python");
-            terminal.echo("You can also check Leash Shell http://leash.jcubic.pl that have " +
+            terminal.echo("You can also check Leash Shell https://leash.jcubic.pl that have " +
                           "python command, that run same code.");
         },
         width: 600,
@@ -199,17 +199,4 @@ $(function() {
         //py.destroy();
     });
     $('footer a').avatar('avatar.png');
-
-    //stumble block page loading
-    $('<iframe/>').attr({
-        src: "http://www.stumbleupon.com/badge/embed/5/?url=" + escape(window.location),
-        width: 50,
-        height: 60,
-        allowTransparency: true,
-        frameborder:0}).css({
-            border: 'none',
-            overflow: 'hidden',
-            width: 50,
-            height: 60}).appendTo($('aside #share'));
-
 });
