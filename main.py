@@ -48,7 +48,8 @@ def interpreter(command, term):
 v = sys.implementation.version
 term = window.terminal(interpreter, {
     "prompt": ">>> ",
-    "greetings": "Brython %s.%s.%s" % (v[0], v[1], v[2]),
-    "width": 600,
+    "greetings": False,
+    "onInit": lambda term: term.echo("Brython %s.%s.%s" % (v[0], v[1], v[2]), {"formatters": False}),
     "height": 255
 })
+window.pydicator.stop()
