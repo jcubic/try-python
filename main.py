@@ -42,7 +42,7 @@ def interpreter(command, term):
     except SyntaxError as msg:
         if str(msg) == 'invalid syntax : triple string end not found' or \
             str(msg).startswith('Unbalanced bracket'):
-            term.set_prompt("... ")
+            term.set_prompt("....... ")
             code = code + command
 
 v = sys.implementation.version
