@@ -79,7 +79,7 @@ function terminal(interpreter, options) {
     }, options);
 }
 
-formatter('python');
+$.terminal.syntax('python');
 //--------------------------------------------------
 // MAIN CODE
 //--------------------------------------------------
