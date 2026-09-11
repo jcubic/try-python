@@ -29,7 +29,7 @@ header("X-Powered-By: ");
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://rawgit.com/jcubic/jquery.terminal/devel/css/jquery.terminal.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
     <link href="css/trypython.css" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
@@ -40,7 +40,7 @@ header("X-Powered-By: ");
     <header><img src="css/python.png"/><h1>Try Python</h1></header>
     <div id="terminal"></div>
     <p>This is interactive online interpreter for <a href="https://www.python.org">Python</a> Programming language. It use <a href="https://terminal.jcubic.pl">JQuery terminal Emulator Plugin</a>, <a href="https://brython.info/">Brython</a> and <a href="https://prismjs.com/">Prims.js</a>. Python is dynamic, high level, object oriented programming language that you can now try directly from your browser.</p>
-    <footer>Copyright &copy; 2011-<?php echo date('Y'); ?> <a href="https://jcubic.pl/jakub-jankiewicz">Jakub T. Jankiewicz</a></footer>
+    <footer>Copyright &copy; 2011-<?php echo date('Y'); ?> <a href="https://jakub.jankiewicz.org/">Jakub T. Jankiewicz</a></footer>
   </section>
   <!--
   <div id="wrapper">
@@ -59,7 +59,7 @@ header("X-Powered-By: ");
     </div>
   </aside>
   <? endif; ?>
-  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.x.x"></script>
   <script>
 var pydicator = (function(element) {
     var run;
@@ -86,12 +86,12 @@ pydicator.start();
   <? if ($_SERVER["HTTP_HOST"] == "localhost"): ?>
   <script src="../terminal/js/jquery.terminal-src.js"></script>
   <? else: ?>
-  <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
   <? endif; ?>
   <link href="https://unpkg.com/prismjs@1.8.1/themes/prism.css" rel="stylesheet"/>
   <script src="https://unpkg.com/prismjs@1.8.1/prism.js"></script>
   <script src="https://unpkg.com/prismjs/components/prism-python.min.js"></script>
-  <script src="https://unpkg.com/jquery.terminal@2.6.3/js/prism.js"></script>
+  <script src="https://unpkg.com/jquery.terminal/js/prism.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.3/brython.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.3/brython_stdlib.js"></script>
   <script type="text/python" src="main.py"></script>
